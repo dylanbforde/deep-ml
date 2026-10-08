@@ -1,0 +1,9 @@
+import numpy as np
+
+def calculate_matrix_mean(matrix: list[list[float]], mode: str) -> list[float]:
+	matrix = np.array(matrix, dtype=np.float32)
+
+	if mode == 'column':
+		return np.mean(matrix, axis=0)
+	else:
+		return np.mean(matrix, axis=1)

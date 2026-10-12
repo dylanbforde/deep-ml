@@ -13,4 +13,11 @@ def orthogonal_projection(v, L):
 
 	num = np.dot(v, L)
 	den = np.dot(L, L)
-	return np.dot((num/den), L)
+
+	frac = np.divide(
+		num,
+		den,
+		where=np.abs(den) > 1e-10
+	)
+
+	return np.dot(frac, L)

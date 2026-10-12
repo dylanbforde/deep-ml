@@ -12,6 +12,5 @@ def matrix_determinant_and_trace(matrix: list[list[float]]) -> tuple[float, floa
 	"""
 	matrix = np.array(matrix)
 	det = np.linalg.det(matrix)
-	trace = np.sum([matrix[x][x] for x in range(len(matrix))])
-
+	trace = np.sum(np.diag(matrix))
 	return det, trace
